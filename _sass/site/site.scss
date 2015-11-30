@@ -1,0 +1,91 @@
+/***
+ * HOMEPAGE
+ ***/ 
+.site-home {
+  
+}
+.about-information h2, .about-information h3 {
+  margin: 0em;
+}
+
+.doc-list, .about-information {
+  list-style: none;
+  max-width: 45em;
+  margin: 0em auto ($spacing-unit * 2) auto;
+}
+
+.doc-preview {
+
+  border-bottom: .2em solid black;
+}
+.doc-preview__title {
+  text-align: left;
+  margin-bottom: 0em;
+}
+.doc-preview__summary {
+  
+}
+
+/**SIDEBAR**/
+.site-sidebar {
+  background-color: gray;
+}
+
+.widget {
+  border: 1px solid black;
+  background-color: white;
+  margin: $spacing-unit;
+  padding: $spacing-unit / 2;
+}
+
+.widget__title {
+  margin: 0em;
+}
+
+/**LAYOUT (home/sidebar)**/
+
+@include media-query($large) {
+  .site-home {
+    @include span(first 16 of 24);
+  }
+  .site-sidebar {
+    @include span(last 8 of 24);
+  }
+
+}
+
+/***********/
+
+.site-header {
+  position: fixed;
+  top: 0em;
+  left: 0em;
+  z-index: 4;
+  width: 100%;
+  background-color: white;
+  border-bottom: .05em solid black;
+}
+
+.site-title, .page-title {
+  padding-left: $spacing-unit / 4;
+}
+
+.site-title {
+  color: red;
+  text-decoration: none;
+}
+
+.page-title {
+  font-size: $base-font-size;
+  margin: 0em;
+  //padding: 0em;
+  font-family: Verdana;
+  text-align: left;
+  line-height: $base-line-height;
+}
+
+.nav-link {
+  float: right;
+  font-size: $small-font-size;
+  padding-right: $spacing-unit / 4;
+}

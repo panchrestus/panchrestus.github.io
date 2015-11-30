@@ -1,11 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Testing</title>
-  </head>
+---
+layout: default
 
-  <body>
-    <h1>You are here now.</h1>
-    <p><a href="second.html">Go here now.</a></p>
-  </body>
-</h1>
+---
+
+<main class="site-home">
+
+  <section class="about-information">
+    <h2>Welcome to Documents!</h2>
+    <p>This feature of <a href="http://jihadology.net">jihadology.net</a> is designed to be a resource for journalists, columnists, academics and anyone else researching or writing about Middle Eastern terrorist groups.</p> 
+    <p>The primary benefit of docs.jihadology.net is its usage of open-source code from The New York Times called <a href="https://github.com/NYTimes/Emphasis">Emphasis</a> which allows direct linking to specific paragraphs and sentence highlighting.</p>
+    <h3>Using Emphasis</h3>
+    <ol>
+      <li>Double tap the shift key and &#182; symbols appear beside paragraphs</li>
+      <li>Click any &#182; to select the paragraph</li>
+      <li>(Optional) Click one or more sentences in a selected paragraph to highlight it</li>
+      <li>Copy/paste the generated URL in your address bar to link directly to the selected paragraph with the desired highlighting</li>
+    </ol>
+    <p>Learn more about this project by <a href="http://github.com">visiting us on Github</a>.</p>
+  </section>
+
+  <section class="doc-list">
+    <h2>Available Documents</h2>
+  {% for document in site.pages %}
+  {% if document.title %}
+    <article class="doc-preview">
+      <h3 class="doc-preview__title">
+        <a href="{{ document.url | prepend: site.baseurl }}">{{ document.title }}</a>
+          </h3>
+      <p class="doc-preview__summary">{{ document.summary }}</p>
+    </article>
+  {% endif %}
+  {% endfor %}
+  </section>
+
+</main>
+
+{% include site-sidebar.html %}

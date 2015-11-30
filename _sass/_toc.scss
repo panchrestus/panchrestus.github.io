@@ -1,0 +1,92 @@
+.toggle-container {
+}
+.toggle-container .toggleable {
+}
+.toggle-container .toggleable:first {
+ padding-top: 0em; 
+}
+.toggle-container .toggleable > * { 
+  display: none; 
+  opacity: 0; 
+  //margin-top: .5em; //needs to double .toggle:after padding
+}
+
+%fixed-toggle {
+  position: fixed;
+  z-index: 5;
+  width: auto;
+  font-size: $base-font-size;
+}
+%fixed-toggle-content {
+  position: fixed;
+  top: 0px;
+  left: 0em;
+  height: 90%;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 1em;
+  overflow-y: auto;
+  background-color: white;
+  @include media-query($medium) {
+    position: static;
+    top: initial;
+    left: initial;
+    height: auto;
+    width: auto;
+    overflow-y: auto;
+    background-color: transparent;
+  }
+}
+
+#toggle-toc { 
+  display: none; 
+}
+#toggle-toc:checked ~ .toggle:after { 
+  background-color: black;
+  color: white;
+}
+#toggle-toc:checked ~ .toggleable > *, { 
+  display: block; 
+  opacity: 1;
+}
+.toggle { 
+  display: inline; 
+  cursor: pointer; 
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none; 
+  user-select: none; 
+}
+.toggle:after {
+  content: attr(data-open);
+  display: inline;
+  font-size: $base-font-size;
+  padding: $spacing-unit / 4;
+}
+.toggle:hover:after {
+  color: white;
+  background-color: black;
+}
+.toggle:active:after {
+ background-color: red; 
+}
+
+@include media-query($medium) {
+  .toggle-container { 
+    float: none;
+    margin: 0em;
+  }
+  .toggle-container .toggleable {
+    padding-top: 0em; 
+  }
+  .toggle-container .toggleable > * {
+    padding: .25em;
+    display: block;
+    width: 100%;
+    opacity: 1;
+    overflow: hidden;
+  }
+  .toggle,
+  .toggle:after { 
+    display: none; 
+  } 
+}

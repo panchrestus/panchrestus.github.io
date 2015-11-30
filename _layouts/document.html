@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<script type="text/javascript" src="{{ "/assets/js/emphasis.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/scrollspy.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/smoothscroll.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/tocscroll.js" | prepend: site.baseurl }}"></script>
+
+<script>
+    smoothScroll.init();
+    gumshoe.init({offset: 5, callback: tocscroll});
+</script>
