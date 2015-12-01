@@ -1,9 +1,29 @@
----
-layout: default
+<!DOCTYPE html>
+<html>
 
----
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<main class="site-home">
+  <title>Documents - Jihadology.net</title>
+  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://docs.panchrestus.com/">
+  <link rel="alternate" type="application/rss+xml" title="Documents - Jihadology.net" href="http://docs.panchrestus.com/feed.xml">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a class="site-title" href="/">Documents - Jihadology.net</a>
+  <h1 class="page-title"></h1>
+</header>
+
+    
+    <main class="site-home">
 
   <section class="about-information">
     <h2>Welcome to Documents!</h2>
@@ -21,18 +41,68 @@ layout: default
 
   <section class="doc-list">
     <h2>Available Documents</h2>
-  {% for document in site.pages %}
-  {% if document.title %}
+  
+  
     <article class="doc-preview">
       <h3 class="doc-preview__title">
-        <a href="{{ document.url | prepend: site.baseurl }}">{{ document.title }}</a>
+        <a href="/the-demo-document/">The Demo Document</a>
           </h3>
-      <p class="doc-preview__summary">{{ document.summary }}</p>
+      <p class="doc-preview__summary"></p>
     </article>
-  {% endif %}
-  {% endfor %}
+  
+  
+  
+    <article class="doc-preview">
+      <h3 class="doc-preview__title">
+        <a href="/the-management-of-savagery/">"The Management of Savagery"</a>
+          </h3>
+      <p class="doc-preview__summary">This is the summary for "The Management of Savagery"
+</p>
+    </article>
+  
+  
+  
+  
+  
+  
   </section>
 
 </main>
 
-{% include site-sidebar.html %}
+<aside id="site-sidebar" class="site-sidebar">
+
+    <div class="widget">
+      <h5 class="widget__title">Brief About</h5>
+      <p><a href="http://jihadology.net">Jihadology.net</a> serves as a clearinghouse for jihādī primary source material, original analysis, and translation service. It is a personal project of <a href="http://jihadology.net/about/about-me/">Aaron Y. Zelin</a> and is not associated with <a href="http://www.washingtoninstitute.org/">The Washington Institute for Near East Policy</a>.</p>
+      
+      <p><a href="/">Docs.jihadology.net</a> is a contribution made and maintained by David Clark. Learn more about it by <a href="http://github.com">visiting us on Github</a>.</p>
+    </div>
+    
+    <div class="widget">
+      <h5 class="widget__title">Translations</h5>
+      <p>To inquire about translations of any material found on <a href="http://jihadology.net">Jihadology.net</a> (for a fee) email:</p>
+      <p>azelin [at] jihadology [dot] net</p>
+    </div>
+    
+    <div id="blog_subscription-5" class="widget">
+      <h5 class="widget__title">
+      <label for="subscribe-field">Receive updates via email</label>
+      </h5>
+      <form id="subscribe-blog" accept-charset="utf-8" method="post" action="https://subscribe.wordpress.com">
+        <p>Join 13,000+ other subscribers</p>
+        <p>
+          <input type="hidden" value="subscribe" name="action">
+          <input type="hidden" value="12731069" name="blog_id">
+          <input type="hidden" value="http://jihadology.net/" name="source">
+          <input type="hidden" value="widget" name="sub-type">
+          <input type="hidden" value="blog_subscription-5" name="redirect_fragment">
+          <input id="_wpnonce" type="hidden" value="38bb640aa7" name="_wpnonce">
+          <input type="submit" value="Subscribe">
+        </p>
+      </form>
+    </div>
+</aside>
+
+  </body>
+
+</html>
